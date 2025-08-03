@@ -28,6 +28,7 @@ COMFYUI_VERSION="v0.3.48"
 # Download models locally into cache dir
 script_dir="${0%%/*}"
 cache_dir="${script_dir}/cache"
+mkdir -p "${cache_dir}"
 
 # FluxDev GGUF model and CLIP
 wget --continue -O "${cache_dir}"/flux1-dev-Q8_0.gguf https://huggingface.co/city96/FLUX.1-dev-gguf/resolve/main/flux1-dev-Q8_0.gguf
