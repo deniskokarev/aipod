@@ -17,7 +17,6 @@ Once the Docker image is built and uploaded you could run the ComfyUI pod:
 ```
 runpodctl create pod \
   --communityCloud \
-  --volumeSize 5 \
   --containerDiskSize 100 \
   --gpuType "NVIDIA GeForce RTX 4090" \
   --gpuCount 1 \
@@ -28,7 +27,7 @@ runpodctl create pod \
   --name comfy
 ```
 
-5GB persistent container storage is sufficient to keep workplace between container restarts.
+There is no reason to use Pod volume --volumeSize 10 --volumePath "/workspace" because nothing is stored there.
 
 Goto https://console.runpod.io/pods and wait until pod starts. Open Logs and monitor when Docker images downloads
 and unpacks. It may take ~10min to start the image. Once container started, click Connect and click on port 3000

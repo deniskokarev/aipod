@@ -9,3 +9,4 @@ Various Runpod VM images, deployment scripts and instructions.
 
 # Components
 - [Comfy](./comfy/README.md)
+- [Kohya_ss](./kohya/README.md)
