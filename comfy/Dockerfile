@@ -12,5 +12,5 @@ COPY ./cache/flux-ae.safetensors /ComfyUI/models/vae/flux-ae.safetensors
 COPY ./cache/t5xxl_fp8_e4m3fn.safetensors /ComfyUI/models/text_encoders/t5/t5xxl_fp8_e4m3fn.safetensors
 COPY ./cache/clip_l.safetensors /ComfyUI/models/text_encoders/clip_l.safetensors
 
-COPY dkv_customize_comfy.sh /tmp/dkv_customize_comfy.sh
-RUN COMFYUI_VERSION=$COMFYUI_VERSION bash -x /tmp/dkv_customize_comfy.sh
+COPY customize.sh /tmp/customize.sh
+RUN COMFYUI_VERSION=$COMFYUI_VERSION bash -x /tmp/customize.sh

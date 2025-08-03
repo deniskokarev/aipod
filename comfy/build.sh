@@ -1,6 +1,8 @@
 #!/bin/bash
-# a slightly customized ComfyUI built on top of standard runpod image
+# a slightly customized ComfyUI built on top of standard runpod comfy image
 set -o errexit
+
+COMFYUI_VERSION="v0.3.48"
 
 do_help() {
   echo "Build Comfy Docker image"
@@ -23,7 +25,6 @@ done
 
 # Shift processed options and their arguments
 shift $((OPTIND - 1))
-COMFYUI_VERSION="v0.3.48"
 
 # Download models locally into cache dir
 script_dir="${0%%/*}"
@@ -46,7 +47,7 @@ nsfw 1tAAJ27rsmsefMBGFqxrllNWooAJAPY8u
 EOF
 
 # build the image with downloaded models
-sudo docker build --build-arg COMFYUI_VERSION="${COMFYUI_VERSION}" -t dakoreff/comfy:flux-dev -f Dockerfile.comfy .
+sudo docker build --build-arg COMFYUI_VERSION="${COMFYUI_VERSION}" -t dakoreff/comfy:flux-dev -f Dockerfile .
 if [ "$do_upload" != "" ]; then
   sudo docker push dakoreff/comfy:flux-dev
 fi
