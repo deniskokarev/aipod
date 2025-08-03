@@ -44,4 +44,4 @@ As an example you can try Lilia's workflow: Open / Upload "comfy_wflow_lk_sel.js
 
 The expected result:
 
-![Lilia Rutgers](comfy/img/comfy_wflow_lk_example.jpeg)
+![Lilia Rutgers](./img/comfy_wflow_lk_example.jpeg)
