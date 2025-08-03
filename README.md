@@ -27,5 +27,12 @@ runpodctl create pod \
   --name comfy
 ```
 
-Goto https://console.runpod.io/pods wait a little until pod starts, click Connect and click on port 3000 to open
-ComfyUI.
+Goto https://console.runpod.io/pods and wait until pod starts. Open Logs and monitor when Docker images downloads
+and unpacks. It may take ~10min. Once container started, click Connect and click on port 3000 to open ComfyUI.
+
+You can also open direct ssh connection and fiddle with the running container directly.
+For example use `wget` to download some non-standard LORAs or Models into /ComfyUI/models.
+
+However, Manager / Model Manager is mostly sufficient.
+
+As an example you can try Lilia's workflow: Open / Upload "comfy_wflow_lk_sel.json"
